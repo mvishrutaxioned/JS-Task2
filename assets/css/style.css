@@ -112,10 +112,31 @@ li {
   Header styling starts here
 =================================*/
 
+header {
+  padding: 15px;
+  background: #373b69;
+}
 
+header .wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
 
+#searchForm input {
+  width: 85%;
+  padding: 10px;
+  border: 2px solid #22254b;
+  border-radius: 30px;
+  background: #373b69;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  text-indent: 5px;
+}
 
-
+#searchForm input::placeholder { color: #7370bf; }
+#searchForm input:focus { background: #22254b; }
 
 /*=================================
   Header styling ends here
@@ -135,20 +156,6 @@ li {
 /*=================================
   main styling ends here
 =================================*/
-
-/*=================================
-  footer styling starts here
-=================================*/ 
-
-
-
-
-
-
-
- /*=================================
-  footer styling ends here
-=================================*/ 
 
 /*media query starts*/
 /*media query for 995px starts here*/
