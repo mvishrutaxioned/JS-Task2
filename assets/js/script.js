@@ -97,3 +97,51 @@ var data = [
         description: 'In her turbulent life as a professional assassin, Sam has no choice but to go rogue to save the life of an innocent 8-year-old girl in the middle of the gang war she has unleashed.'
     }
 ];
+
+// display movies on load and on search
+function displayMovies(data) {
+    if(data.length > 1) {
+        data.forEach(item => {
+            let movie = `
+            <li>
+                <figure>
+                    <img src="${item.poster}" alt="Movie Img">
+                </figure>
+                <div class="movie-name">
+                    <h2>${item.title}</h2>
+                    <span>${item.imdb}</span>
+                </div>
+                <div class="movie-info">
+                    <h3>Overview</h3>
+                    <p>
+                        ${item.description}
+                    </p>
+                </div>
+            </li>
+            `;
+            movieGallery.innerHTML += movie;
+        })
+    } else {
+        let movie = `
+            <li>
+                <figure>
+                    <img src="${data.poster}" alt="Movie Img">
+                </figure>
+                <div class="movie-name">
+                    <h2>${data.title}</h2>
+                    <span>${data.imdb}</span>
+                </div>
+                <div class="movie-info">
+                    <h3>Overview</h3>
+                    <p>
+                        ${data.description}
+                    </p>
+                </div>
+            </li>
+        `;
+        movieGallery.innerHTML += movie;
+    }
+}
+
+// calling function
+displayMovies(data)
