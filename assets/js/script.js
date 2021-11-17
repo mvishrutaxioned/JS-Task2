@@ -145,3 +145,28 @@ function displayMovies(data) {
 
 // calling function
 displayMovies(data)
+
+// search movies function
+function searchMovies(e) {
+    e.preventDefault();
+    var searchText = searchInput.value;
+    var searchArr = [];
+
+    data.forEach(item => {
+        if(item.title.toLowerCase().includes(searchText)) {
+            movieGallery.innerHTML = '';
+            displayMovies(item)
+        } else {
+            searchArr.push(item)
+        }
+    })
+
+    if(searchArr.length == data.length) {
+        movieGallery.innerHTML = '';
+        displayMovies(data)
+        alert('No Such Movies Found')
+    }
+}
+
+// event listeners
+searchForm.addEventListener('submit', e => searchMovies(e))
