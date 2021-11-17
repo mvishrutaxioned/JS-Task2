@@ -219,9 +219,18 @@ main .wrapper ul li:hover .movie-info { bottom: 0; }
 =================================*/
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
+/*media query for 1024px starts here*/
+@media only screen and (max-width: 1024px) {
+  main .wrapper ul {
+    justify-content: center;
+  }
+}
+/*media query for 1024px ends here*/
 
-
-
-}  
+/*media query for 540px starts here*/
+@media only screen and (max-width: 540px) {
+  header .wrapper {
+    justify-content: center;
+  }
+}
+/*media query for 540px ends here*/
