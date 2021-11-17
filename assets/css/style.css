@@ -146,12 +146,73 @@ header .wrapper {
   main styling starts here
 =================================*/
 
+main {
+  background: #22254b;
+  padding: 10px;
+}
 
+main .wrapper { width: 100%; }
 
+main .wrapper ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+main .wrapper ul li {
+  width: 300px;
+  min-height: 570px;
+  height: auto;
+  margin: 12px;
+  position: relative;
+  background: #373b69;
+  overflow: hidden;
+}
 
+main .wrapper ul li:hover .movie-info { bottom: 0; }
 
+.movie-name {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid #fff; */
+}
 
+.movie-name h2 {
+  width: 75%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.movie-name span {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #22254b;
+  color: #f39548;
+}
+
+.movie-info {
+  padding: 50px 30px 20px 30px;
+  position: absolute;
+  bottom: -150%;
+  background: #fff;
+  transition: .6s ease;
+}
+
+.movie-info h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.average { color: #FF5733; }
+.flop { color: #fa0303; }
+.hit { color: #2aa130; }
 
 /*=================================
   main styling ends here
