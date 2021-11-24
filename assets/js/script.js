@@ -2,6 +2,7 @@ var searchForm = document.querySelector('#searchForm');
 var searchInput = document.querySelector('#search');
 var movieGallery = document.querySelector('main .wrapper ul')
 var movies = document.querySelectorAll('main .wrapper ul li');
+var sorry = document.querySelector('.wrapper > h2');
 
 // movies data
 var data = [
@@ -100,6 +101,8 @@ var data = [
 
 // display movies on load and on search
 function displayMovies(data) {
+    sorry.classList.add('none')
+    movieGallery.innerHTML = '';
     if(data.length > 1) {
         data.forEach(item => {
             let movie = `
@@ -149,22 +152,24 @@ displayMovies(data)
 // search movies function
 function searchMovies(e) {
     e.preventDefault();
-    var searchText = searchInput.value;
+    var searchText = searchInput.value.toLowerCase();
     var searchArr = [];
 
     data.forEach(item => {
-        if(item.title.toLowerCase().includes(searchText)) {
-            movieGallery.innerHTML = '';
-            displayMovies(item)
+        if(searchText != '') {
+            if(item.title.toLowerCase().includes(searchText)) {
+                displayMovies(item)
+            } else {
+                searchArr.push(item)
+            }
         } else {
-            searchArr.push(item)
+            displayMovies(data)
         }
     })
 
     if(searchArr.length == data.length) {
         movieGallery.innerHTML = '';
-        displayMovies(data)
-        alert('No Such Movies Found')
+        sorry.classList.remove('none')
     }
 }
 
