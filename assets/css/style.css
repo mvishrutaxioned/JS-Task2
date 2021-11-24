@@ -82,6 +82,7 @@ sub { bottom: -.25em; }
 /*for all*/
 body {
   box-sizing: border-box;
+  background: #22254b;
   font-family: sans-serif;
 }
 
@@ -153,6 +154,14 @@ main {
 
 main .wrapper { width: 100%; }
 
+.wrapper > h2 {
+  margin-top: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
 main .wrapper ul {
   display: flex;
   justify-content: flex-start;
@@ -213,6 +222,7 @@ main .wrapper ul li:hover .movie-info { bottom: 0; }
 .average { color: #FF5733; }
 .flop { color: #fa0303; }
 .hit { color: #2aa130; }
+.none { display: none; }
 
 /*=================================
   main styling ends here
